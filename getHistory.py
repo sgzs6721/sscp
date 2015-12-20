@@ -6,7 +6,7 @@ import MySQLdb
 
 def getBeautifulSoup(url) :
     times = 0
-    while times < 3 :
+    while times < 10 :
         print "The " + str(times + 1) + " times getting data!"
         try :
             req = urllib2.Request(url)
@@ -59,7 +59,7 @@ def getDataAndrInsertDB(type, page = 1) :
     url = getUrl(type, page)
     soup = getBeautifulSoup(url)
     if not soup :
-        print "exit"
+        print "Exit"
         exit(1)
     tableTr = soup.findAll("table")[1].findAll("tr")[1:]
     tableTr.reverse()
