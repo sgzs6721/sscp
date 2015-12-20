@@ -67,7 +67,7 @@ def getDataAndrInsertDB(type, page = 1) :
     for tr in tableTr :
         td = tr.findAll("td")
         date = td[1].span.text.encode("utf8")
-        time = ":".join(td[2].text.encode("utf8").split(" "))
+        time = td[2].text.encode("utf8")
         dataNumberDiv = td[3].div.findAll("span")
         dataNumber = ""
         for span in dataNumberDiv :
